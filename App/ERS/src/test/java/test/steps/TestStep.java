@@ -1,0 +1,115 @@
+package test.steps;
+
+import org.openqa.selenium.WebDriver;
+
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class TestStep {
+	
+	WebDriver driver;
+	
+	@Given("^we go to the webpage$")
+	public void we_go_to_the_webpage() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Given("^I enter \"([^\"]*)\" as username$")
+	public void i_enter_as_username(String arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Given("^I enter \"([^\"]*)\" as password$")
+	public void i_enter_as_password(String arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I click login$")
+	public void i_click_login() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I click the reimbursment form$")
+	public void i_click_the_reimbursment_form() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I enter in \"([^\"]*)\" as amount$")
+	public void i_enter_in_as_amount(String arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I enter in \"([^\"]*)\" as description$")
+	public void i_enter_in_as_description(String arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I click submit form$")
+	public void i_click_submit_form() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^the reimbursment will be submitted$")
+	public void the_reimbursment_will_be_submitted() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I click view past reimbursments$")
+	public void i_click_view_past_reimbursments() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I click the delete button$")
+	public void i_click_the_delete_button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^the reimbursment will be deleted$")
+	public void the_reimbursment_will_be_deleted() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I click view all reimbursment$")
+	public void i_click_view_all_reimbursment() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I click on a reimbursment$")
+	public void i_click_on_a_reimbursment() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^I can view all the reimbursment information$")
+	public void i_can_view_all_the_reimbursment_information() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@When("^I approve a reimbursment request$")
+	public void i_approve_a_reimbursment_request() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^the reimbursment request will no longer be shown$")
+	public void the_reimbursment_request_will_no_longer_be_shown() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+}
