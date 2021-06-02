@@ -1,8 +1,13 @@
 package test.steps;
 
+import java.io.IOException;
+import java.nio.file.Paths;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -11,9 +16,18 @@ public class TestStep {
 	
 	WebDriver driver;
 	
+	@Before()
+	public void setup() throws IOException{
+		System.setProperty("webdriver.chrome.driver", Paths.get(System.getProperty("user.dir")).toRealPath()+"\\ERS\\src\\test\\java\\test\\Resources\\chromedriver.exe");
+		this.driver = new ChromeDriver();
+		this.driver.manage().window().maximize();
+		this.driver.manage()
+	}
+	
 	@Given("^we go to the webpage$")
 	public void we_go_to_the_webpage() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+	    
+		
 	    throw new PendingException();
 	}
 
