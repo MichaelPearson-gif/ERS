@@ -114,6 +114,7 @@ var table = new Tabulator("#example-table",{
 		rowContextMenu:rowMenu,
 	rowClick:function(e, row){ //trigger an alert message when the row is clicked
 		ses.setItem('currentReimbursementId',row.getData()["id"]);
+		makeModal(row);
 	},
 });
 
@@ -191,3 +192,61 @@ function logout() {
     window.location = "http://localhost:8090/ERS/";
 }
 
+
+
+function makeModal( row) {
+	// Get the modal
+	var modal = document.getElementById("myModal");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function () {
+		modal.style.display = "none";
+	}
+
+	var amountP = document.getElementById("dollarAmount")
+	var descriptionP = document.getElementById("description")
+	var typeP = document.getElementById("type")
+	console.log(row.getData())
+	amountP.innerText= row.getData()["amount"]
+	descriptionP.innerText = row.getData()["description"]
+	typeP.innerText = row.getData()["type"]
+
+	modal.style.display = "block";
+
+}
+
+function approve(){
+	console.log("gonna to approve this")
+	console.log(ses.getItem("currentReimbursementId"))
+	let xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function () {
+		if (this.readyState === 4 && this.status === 200) {
+			alert("rembursment approved")
+			AllReimbursements()
+		} 
+	}
+
+	xhr.open("POST", "http://localhost:8090/ERS/" + ses.getItem("currentReimbursementId").toString() + ".ReimbursementApproved")
+
+	xhr.send(JSON.stringify(uName));
+	
+
+}
+
+function deny(){
+	let xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function () {
+		if (this.readyState === 4 && this.status === 200) {
+			alert("rembursement denied")
+			AllReimbursements()
+		}
+	}
+
+	xhr.open("POST", "http://localhost:8090/ERS/" + ses.getItem("currentReimbursementId").toString() + ".ReimbursementUnapproved")
+
+	xhr.send(JSON.stringify(uName));
+	
+}
