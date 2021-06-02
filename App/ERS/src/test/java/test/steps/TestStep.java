@@ -2,7 +2,10 @@ package test.steps;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.concurrent.TimeUnit;
 
+import org.junit.rules.Timeout;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -21,32 +24,30 @@ public class TestStep {
 		System.setProperty("webdriver.chrome.driver", Paths.get(System.getProperty("user.dir")).toRealPath()+"\\ERS\\src\\test\\java\\test\\Resources\\chromedriver.exe");
 		this.driver = new ChromeDriver();
 		this.driver.manage().window().maximize();
-		this.driver.manage()
+		this.driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 	}
 	
 	@Given("^we go to the webpage$")
 	public void we_go_to_the_webpage() throws Throwable {
-	    
-		
-	    throw new PendingException();
+	    this.driver.get("http://localhost:8090/ERS/");
 	}
 
 	@Given("^I enter \"([^\"]*)\" as username$")
-	public void i_enter_as_username(String arg1) throws Throwable {
+	public void i_enter_as_username(String username) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		this.driver.findElement(By.xpath("//input[@id='uName']")).sendKeys(username);
 	}
 
 	@Given("^I enter \"([^\"]*)\" as password$")
-	public void i_enter_as_password(String arg1) throws Throwable {
+	public void i_enter_as_password(String password) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		this.driver.findElement(By.xpath("//input[@id='pWord']")).sendKeys(password);
 	}
 
 	@When("^I click login$")
 	public void i_click_login() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    this.driver.findElement(By.xpath("//button[contains(text(),'LOGIN')]")).click();
 	}
 
 	@When("^I click the reimbursment form$")
